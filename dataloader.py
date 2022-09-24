@@ -263,7 +263,7 @@ def preprocess_data(path, prepare_test = False):
 	for pid in patient_ids:
 		new_row        = np.zeros(trainingdata.shape[1])
 		new_row[:7]    = np.array(trainingdata[trainingdata.iloc[:, 0] == pid].iloc[0, :7])
-		for _ in range(1): # negative sampling
+		for _ in range(1): # negative sampling 
 			new_row[1]     = trainingdata.iloc[:, 1].sample(n = 1, random_state = 1).values #WT
 			new_row[2]     = trainingdata.iloc[:, 2].sample(n = 1, random_state = 1).values #HT
 			new_row[3]     = trainingdata.iloc[:, 3].sample(n = 1, random_state = 1).values #AGE
